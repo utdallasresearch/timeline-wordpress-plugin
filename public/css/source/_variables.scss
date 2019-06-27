@@ -1,0 +1,16 @@
+// Variables 
+
+// Font color Variables
+$background-color: white;
+$timeline-color: #D7E4ED;
+$timeline-color-dark: desaturate(darken($timeline-color, 20%), 15%);
+
+// fonts
+$icon-font: FontAwesome;
+
+$fa-angle-right: "\f105";
+$fa-angle-down: "\f107";
+
+// Breakpoints
+$timeline-alternating-size: 1174px;
+$timeline-max-width: 1174px;

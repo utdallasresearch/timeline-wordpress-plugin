@@ -1,0 +1,16 @@
+{
+    "name" : "utdallasresearch/timeline-wordpress-plugin",
+    "type" : "wordpress-plugin",
+    "description": "UT Dallas Research Timeline Wordpress plugin",
+    "keywords": ["timeline", "wordpress", "UT Dallas", "UTD"],
+    "homepage": "http://github.com/utdallasresearch/timeline-wordpress-plugin",
+    "license": "MIT",
+    "authors": [{
+        "name": "Wun Chiou",
+        "email": "wun@utdallas.edu",
+        "role": "Developer"
+    }],
+    "require": {
+        "php": ">=7.1"
+    }
+}
