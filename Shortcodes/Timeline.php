@@ -77,7 +77,6 @@ class Timeline extends Shortcode
             while ($loop->have_posts()) {
                 $loop->the_post();
                 ob_start();
-                get_template_part('template-parts/content', 'timeline-object');
 
                 // If the theme has a template-parts/content-person.php file, use that to render the Person.
                 // Otherwise, use the default view partial included in this theme.
