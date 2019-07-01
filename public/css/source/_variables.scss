@@ -2,8 +2,16 @@
 
 // Font color Variables
 $background-color: white;
-$timeline-color: #D7E4ED;
+$timeline-color: #ccc;
 $timeline-color-dark: desaturate(darken($timeline-color, 20%), 15%);
+
+// Sizing
+$timeline-padding-x: 1em;
+$timeline-padding-y: 2em;
+$timeline-image-size: 40px;
+$timeline-image-lg-size: 60px;
+$timeline-item-tail-size: 14px;
+$timeline-item-line-separation: $timeline-item-tail-size + 5px;
 
 // fonts
 $icon-font: FontAwesome;
