@@ -165,7 +165,7 @@
   }
 
   .fa {
-    line-height: 2.5rem;
+    line-height: $timeline-image-size;
   }
 
   &.cd-picture {
@@ -192,7 +192,7 @@
     font-size: 34px;
 
     .fa {
-      line-height: 3.6rem;
+      line-height: $timeline-image-lg-size;
     }
   }
   .cssanimations .cd-timeline-block.bounce-in .cd-timeline-img {

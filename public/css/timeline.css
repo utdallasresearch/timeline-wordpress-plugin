@@ -133,7 +133,7 @@
   margin-top: -12px;
 }
 .cd-timeline-img .fa {
-  line-height: 2.5rem;
+  line-height: 40px;
 }
 .cd-timeline-img.cd-picture {
   opacity: 1;
@@ -159,7 +159,7 @@
     font-size: 34px;
   }
   .alternating .cd-timeline-img .fa {
-    line-height: 3.6rem;
+    line-height: 60px;
   }
 
   .cssanimations .cd-timeline-block.bounce-in .cd-timeline-img {
