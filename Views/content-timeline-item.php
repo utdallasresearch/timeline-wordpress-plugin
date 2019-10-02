@@ -32,7 +32,13 @@ $target = (parse_url($timeline_item->link, PHP_URL_HOST) == $_SERVER['SERVER_NAM
     <?php endif; ?>
 
     <?php if ($timeline->link && $timeline_item->link) : ?>
-        <a href="<?= $timeline_item->link ?>" target="<?= $target ?>" class="cd-read-more">Read More</a>
+        <a href="<?= $timeline_item->link ?>" target="<?= $target ?>" class="cd-read-more">
+            <?php if ($timeline->compact) : ?>
+                <i class="fa fa-chevron-right cd-read-more-icon"></i>
+            <?php else : ?>
+                Read More
+            <?php endif; ?>
+        </a>
     <?php endif; ?>
 
     <?php if ($timeline->excerpt && has_excerpt()) : ?>

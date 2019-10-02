@@ -23,14 +23,18 @@
     padding-bottom: 0;
   }
 
+  &.compact.last-step::before {
+    max-height: calc(100% - 1.5em - ((#{$timeline-image-size} + 1em) / 2));
+  }
+
   //this is the vertical line
   &::before {
     content: '';
     position: absolute;
     top: 0;
-    left: calc(#{$timeline-padding-x} + (#{$timeline-image-size} / 2));
+    left: calc(#{$timeline-padding-x} + #{$timeline-image-size / 2} - #{$timeline-line-width / 2});
     height: 100%;
-    width: 2px;
+    width: $timeline-line-width;
     background: $timeline-color;
   }
   
@@ -50,7 +54,7 @@
     // center the vertical line
     &::before {
       left: 50%;
-      margin-left: -1px;
+      margin-left: -$timeline-line-width / 2;
     }
   }
 }
@@ -59,8 +63,12 @@
   position: relative;
   margin: 1em 0;
 
-  &:first-child {
+  &:first-child, .cd-timeline.compact &:first-child {
     margin-top: 0;
+  }
+
+  .cd-timeline.compact & {
+    margin: 0.5em 0;
   }
 
   .first-arrow &:first-child {
@@ -71,7 +79,7 @@
     margin-bottom: 0;
   }
 
-  .last-step &:last-child {
+  .last-step:not(.compact) &:last-child {
     background-color: $background-color;
   }
 
@@ -107,6 +115,10 @@
     margin-top: 1rem;
     display: table;
     clear: both;
+
+    .cd-timeline.compact & {
+      top: 25%;
+    }
   }
 
   &:first-child::before {
@@ -211,6 +223,13 @@
   box-shadow: 3px 3px 0 $timeline-color;
   border: 2px solid $timeline-color;
 
+  .cd-timeline.compact & {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0.5em 1em;
+  }
+
   // triangle connector to vertical line ("tail")
   &::before {
     content: '';
@@ -226,12 +245,25 @@
   .cd-timeline-title {
     margin-top: 0px;
     color: #303e49;
+
+    &::before {
+      display: none;
+    }
+
+    .cd-timeline.compact & {
+      font-size: 1em;
+      margin: 0;
+    }
   }
 
   .cd-timeline-object-content {
     margin: 1em 0;
     line-height: 1.6;
     padding: 0px;
+
+    .cd-timeline.compact & {
+      display: none;
+    }
 
     img {
       width:100%;
@@ -252,6 +284,24 @@
     border-radius: 0.25em;
     transition: box-shadow 0.5s;
     box-shadow: 4px 4px 0 $timeline-color;
+
+    .cd-timeline.compact &, .cd-timeline.compact &:hover {
+      flex-grow: 1;
+      box-shadow: none;
+      text-align: right;
+      text-decoration: none;
+      padding: 0;
+
+      .cd-read-more-icon {
+        text-align: center;
+        color: white;
+        background-color: #E98300;
+        width: $timeline-image-size;
+        height: $timeline-image-size;
+        line-height: $timeline-image-size;
+        border-radius: 25px;
+      }
+    }
     
     &:hover {
       box-shadow: 4px 4px 0 $timeline-color-dark;
@@ -262,6 +312,11 @@
     float: left;
     padding: .8em 0;
     opacity: .7;
+
+    .cd-timeline.compact & {
+      order: -1;
+      padding: 0 0.5em 0 0;
+    }
   }
 
   &::after {
@@ -273,24 +328,21 @@
 .no-touch .cd-timeline-content .cd-read-more:hover {
   background-color: #bac4cb;
 }
-@media only screen and (min-width: 768px) {
-  .cd-timeline-content .cd-timeline-title {
-    font-size: 20px;
-    font-size: 1.25rem;
-  }
-  .cd-timeline-content .cd-timeline-object-content {
-    font-size: 16px;
-    font-size: 1rem;
-    margin-top: 0px;
-  }
-  .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
-    font-size: 14px;
-    font-size: 0.875rem;
-  }
-  .cd-timeline::before {
-    left: 34px;
+
+@media only screen and (min-width: $timeline-desktop-size) {
+  .cd-timeline-content {
+
+    .cd-timeline-object-content {
+      font-size: 1rem;
+      margin-top: 0px;
+    }
+
+    .cd-read-more, .cd-date {
+      font-size: 0.875rem;
+    }
   }
 }
+
 @media only screen and (min-width: $timeline-alternating-size) {
   .alternating .cd-timeline-content {
     margin-left: 0;
@@ -340,6 +392,15 @@
       left: auto;
       right: calc(100% + (#{$timeline-item-line-separation} * 2) + #{$timeline-image-lg-size});
       text-align: right;
+    }
+  }
+  .compact.alternating .cd-timeline-block:nth-child(even) .cd-timeline-content {
+    .cd-read-more {
+      float: none;
+      box-shadow: none;
+      &:hover {
+        box-shadow: none;
+      }
     }
   }
   .alternating.cssanimations .cd-timeline-block.bounce-in .cd-timeline-content {

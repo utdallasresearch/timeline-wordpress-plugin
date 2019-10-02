@@ -15,6 +15,7 @@ class Timeline extends Shortcode
         'tag' => '',
         'animated' => true,
         'alternating' => true,
+        'compact' => false,
         'content' => true,
         'link' => true,
         'excerpt' => true,
@@ -30,6 +31,7 @@ class Timeline extends Shortcode
         'tag' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
         'animated' => FILTER_VALIDATE_BOOLEAN,
         'alternating' => FILTER_VALIDATE_BOOLEAN,
+        'compact' => FILTER_VALIDATE_BOOLEAN,
         'content' => FILTER_VALIDATE_BOOLEAN,
         'link' => FILTER_VALIDATE_BOOLEAN,
         'excerpt' => FILTER_VALIDATE_BOOLEAN,
@@ -54,6 +56,7 @@ class Timeline extends Shortcode
         $tags = explode(',', $this->tag);
         $animated = $this->animated ? 'cssanimations' : '';
         $alternating = $this->alternating ? 'alternating' : '';
+        $compact = $this->compact ? 'compact' : '';
         $first_arrow = $this->first_arrow ? 'first-arrow' : '';
         $last_arrow = $this->last_arrow ? 'last-arrow' : '';
         $first_step = $this->first_step ? 'first-step' : '';
@@ -66,7 +69,7 @@ class Timeline extends Shortcode
         ];
         set_query_var('timeline_options', $timeline_options);
 
-        $results[] = "<section class='cd-timeline $alternating $animated $first_arrow $last_arrow $first_step $last_step'>";
+        $results[] = "<section class='cd-timeline $alternating $compact $animated $first_arrow $last_arrow $first_step $last_step'>";
         foreach ($tags as $tag) {
             $loop = new WP_Query([
                 'post_type' => (new TimelineItem())->name,

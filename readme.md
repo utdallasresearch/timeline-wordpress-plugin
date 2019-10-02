@@ -22,6 +22,7 @@ Copy into the WordPress plugins folder and activate.
 - Other options
     - `animated={true/false}` : animate the timeline on scroll, default: true
     - `alternating={true/false}` : alternate timeline items left/right of the line, default: true
+    - `compact={true/false}` : use a more compact style for the timeline, default: false
     - `content={true/false}` : show each timeline item's content, default: true
     - `link={true/false}` : show each timeline item's link if set, default: true
     - `excerpt={true/false}` : show each timeline item's excerpt if set, default: true

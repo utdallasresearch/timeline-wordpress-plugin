@@ -6,6 +6,7 @@ $timeline-color: #ccc;
 $timeline-color-dark: desaturate(darken($timeline-color, 20%), 15%);
 
 // Sizing
+$timeline-line-width: 2px;
 $timeline-padding-x: 1em;
 $timeline-padding-y: 2em;
 $timeline-image-size: 40px;
@@ -20,5 +21,6 @@ $fa-angle-right: "\f105";
 $fa-angle-down: "\f107";
 
 // Breakpoints
+$timeline-desktop-size: 768px;
 $timeline-alternating-size: 1174px;
 $timeline-max-width: 1174px;
