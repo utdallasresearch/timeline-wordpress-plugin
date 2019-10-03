@@ -125,7 +125,9 @@
     top: -4rem;
   }
 
-  &:not(:last-child)::after, .first-arrow &:first-child::before, .last-arrow &:last-child::after {
+  .cd-timeline.arrows &:not(:last-child)::after,
+  .cd-timeline.first-arrow &:first-child::before,
+  .cd-timeline.last-arrow &:last-child::after {
     content: "\f103";
     font-family: "FontAwesome";
   }

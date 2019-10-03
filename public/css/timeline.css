@@ -99,7 +99,7 @@
 .cd-timeline-block:first-child::before {
   top: -4rem;
 }
-.cd-timeline-block:not(:last-child)::after, .first-arrow .cd-timeline-block:first-child::before, .last-arrow .cd-timeline-block:last-child::after {
+.cd-timeline.arrows .cd-timeline-block:not(:last-child)::after, .cd-timeline.first-arrow .cd-timeline-block:first-child::before, .cd-timeline.last-arrow .cd-timeline-block:last-child::after {
   content: "\F103";
   font-family: "FontAwesome";
 }

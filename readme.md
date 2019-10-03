@@ -26,6 +26,7 @@ Copy into the WordPress plugins folder and activate.
     - `content={true/false}` : show each timeline item's content, default: true
     - `link={true/false}` : show each timeline item's link if set, default: true
     - `excerpt={true/false}` : show each timeline item's excerpt if set, default: true
+    - `arrows={true/false}` : show a down arrow between timeline items, default: true
     - `first_arrow={true/false}` : show an arrow before the timeline, default: false
     - `last_arrow={true/false}` : show an arrow after the timeline, default: false
     - `first_step={true/false}` : hide the line before the first item, default: false

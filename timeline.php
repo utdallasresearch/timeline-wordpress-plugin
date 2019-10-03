@@ -6,7 +6,7 @@
  * Plugin Name:       UT Dallas Research Timeline
  * Plugin URI:        https://github.com/utdallasresearch/utdresearch-timeline
  * Description:       A WordPress plugin for generating a custom-post-based timeline.
- * Version:           1.0.4
+ * Version:           1.0.5
  * Author:            UT Dallas Research Information Systems
  * Author URI:        https://research.utdallas.edu/oris
  * License:           MIT
@@ -14,7 +14,7 @@
  * Text Domain:       timeline
  * Domain Path:       /languages
  */
-define('Timeline\VERSION', '1.0.4');
+define('Timeline\VERSION', '1.0.5');
 
 // If this file is called directly, abort.
 if (!defined('WPINC')) {
