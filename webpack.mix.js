@@ -10,6 +10,9 @@ const sass_options = {
 mix.setPublicPath('public');
 
 mix.options({
+  postCss: [
+    require('autoprefixer'),
+  ],
   processCssUrls: false,
   autoprefixer: {
     options: {
